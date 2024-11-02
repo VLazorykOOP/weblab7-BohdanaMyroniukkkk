@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Mauto Team">
+    <meta name="description" content="Mauto - компанія з продажу автомобілів">
+    <meta name="keywords" content="Mauto, автомобілі, продаж, купівля авто">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Форма для покупців Mauto</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function updateBudget(value) {
+            document.getElementById('budgetOutput').innerText = value + ' €';
+        } 
+
+        function countWords() {
+            const inputText = document.getElementById("textInput").value;
+            const words = inputText.match(/\b\w+\b/g);
+            const wordCount = words ? words.length : 0;
+            document.getElementById("wordCountOutput").innerText = "Кількість слів: " + wordCount;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const selectElement = document.getElementById('car_brand');
+            selectElement.addEventListener('focus', function() {
+                selectElement.style.color = 'black'; 
+            });
+            selectElement.addEventListener('blur', function() {
+                if (selectElement.value === '') {
+                    selectElement.style.color = 'gray'; 
+                }
+            });
+        });
+    </script>
+    <style>
+
+        #car_brand {
+            color: gray; 
+        }
+        #car_brand option {
+            color: black; 
+        }
+        #car_brand:focus {
+            color: black; 
+        }
+    </style>
+</head>
+<body>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="aboutMauto.html" title="Інформація про компанію" target="_self" rel="noopener">Про компанію</a></li>
+            <li><a href="aboutme.html" title="Інформація про автора" target="_self" rel="noopener">Про автора</a></li>
+            <li><a href="news.html" title="Останні новини" target="_self" rel="noopener">Новини</a></li>
+            <li><a href="menu.html" title="Навігаційне меню" target="_self" rel="noopener">Меню</a></li>
+            <li><a href="table.html" title="Таблиця" target="_self" rel="noopener">Таблиця</a></li>
+        </ul>
+    </nav>
+
+    <h1>Mauto - Форма для покупців</h1>
+    <form action="#" method="POST" enctype="multipart/form-data" class="form-body" title="Форма для покупки авто" novalidate>
+        <fieldset class="contact-info" dir="ltr" title="Контактна інформація">
+            <legend>Контактна інформація</legend>
+            <label for="name" lang="uk" id="nameLabel" dir="ltr">Ім'я <em>*</em></label>
+            <input type="text" id="name" name="name" placeholder="Ваше ім'я" required autofocus><br>
+            
+            <label for="email" lang="uk" id="emailLabel" dir="ltr">Email <em>*</em></label>
+            <input type="email" id="email" name="email" placeholder="Ваш email" required title="Введіть вашу електронну адресу" formnovalidate><br>
+            
+            <label for="phone" lang="uk" id="phoneLabel" dir="ltr">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="Ваш телефон" maxlength="15"><br>
+            
+            <label for="website" lang="uk" id="websiteLabel" dir="ltr">Ваш сайт</label>
+            <input type="url" id="website" name="website" placeholder="http://example.com"><br>
+        </fieldset>
+
+        <fieldset class="car-preferences" dir="ltr" title="Автомобільні вподобання">
+            <legend>Автомобільні вподобання</legend>
+            <label for="car_model">Бажана модель авто</label>
+            <input type="text" id="car_model" name="car_model" placeholder="Модель авто"><br>
+            
+            <label for="color">Бажаний колір</label>
+            <input type="color" id="color" name="color" value="#000000"><br>
+            
+            <label for="budget">Бюджет: <span id="budgetOutput" class="output-value">50000 €</span></label><br>
+            <input type="range" id="budget" name="budget" min="10000" max="100000" step="5000" value="50000" oninput="updateBudget(this.value)"><br>
+            
+            <label for="purchase_date">Дата покупки</label>
+            <input type="date" id="purchase_date" name="purchase_date" required><br>
+        </fieldset>
+
+        <fieldset class="car-type" dir="ltr" title="Типи авто">
+            <legend>Оберіть типи авто</legend>
+            <label for="sedan"><input type="checkbox" id="sedan" name="car_type" value="sedan"> Седан</label>
+            <label for="suv"><input type="checkbox" id="suv" name="car_type" value="suv"> Позашляховик</label>
+            <label for="truck"><input type="checkbox" id="truck" name="car_type" value="truck"> Вантажівка</label>
+            <label for="electric"><input type="checkbox" id="electric" name="car_type" value="electric"> Електрокар</label>
+        </fieldset>
+
+        <fieldset class="car-brand" dir="ltr" title="Оберіть марку авто">
+            <legend>Оберіть марку авто</legend>
+            <label for="car_brand">Марка автомобіля</label>
+            <select id="car_brand" name="car_brand" class="select-class" title="Виберіть марку авто">
+                <option value="" disabled selected style="color: gray;">Марка автомобіля</option>
+                <option value="toyota">Toyota</option>
+                <option value="bmw">BMW</option>
+                <option value="audi">Audi</option>
+                <option value="mercedes">Mercedes</option>
+            </select>
+        </fieldset>
+
+        <fieldset class="additional-info" dir="ltr" title="Додаткові побажання">
+            <legend>Додаткові побажання</legend>
+            <label for="comments">Коментарі</label>
+            <textarea id="comments" name="comments" rows="4" placeholder="Ваші побажання" required maxlength="500" autofocus></textarea><br>
+        </fieldset>
+
+        <fieldset class="file-upload" dir="ltr" title="Завантажте файл">
+            <legend>Форма файлу</legend>
+            <label for="file_upload">Завантажте документ</label>
+            <input type="file" id="file_upload" name="file_upload" multiple><br>
+        </fieldset>
+
+        <fieldset class="datetime-info" dir="ltr" title="Дата та час зустрічі">
+            <legend>Дата та час</legend>
+            <label for="meeting_time">Час зустрічі</label>
+            <input type="datetime-local" id="meeting_time" name="meeting_time" max="2024-12-31T23:59"><br>
+        </fieldset>
+
+        <fieldset class="text-input" dir="ltr" title="Введіть текст для підрахунку слів">
+            <legend>Введіть текст</legend>
+            <label for="textInput">Текст для аналізу</label>
+            <textarea id="textInput" rows="4" placeholder="Введіть текст тут..."></textarea><br>
+            <button type="button" onclick="countWords()">Підрахувати кількість слів</button>
+            <div id="wordCountOutput" class="output-value">Кількість слів: 0</div>
+        </fieldset>
+
+        <p>
+            <input type="submit" value="Відправити">
+        </p>
+    </form>
+
+    <details open style="color: gray;" dir="ltr" lang="uk">
+        <summary>Деталі</summary>
+        Інформація про покупку авто.
+    </details>
+    
+    <progress class="progress-bar" dir="ltr" title="Завантаження даних" value="70" max="100"></progress>
+
+    <footer>
+        <p>© 2024 Mauto. Всі права захищені.</p>
+    </footer>
+</body>
+</html>

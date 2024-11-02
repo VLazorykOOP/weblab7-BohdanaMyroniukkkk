@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Медіа-бібліотека компанії Mauto</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <h1>Медіа-бібліотека компанії Mauto</h1>
+    <p>Ласкаво просимо до медіа-бібліотеки компанії з продажу автомобілів Mauto! Тут ви знайдете наші відеоогляди, аудіопутівники та зображення наших найкращих моделей.</p>
+</header>
+
+<main>
+    <section class="media-section">
+        <h2>Відеоогляди автомобілів</h2>
+        <video controls controls style="display: block; margin: auto;" width="700" >
+            <source src="/images/6157907-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <source src="media/car-video.ogv" type="video/ogg">
+            Ваш браузер не підтримує відео-тег.
+        </video>
+        <p>Перегляньте відеоогляд однієї з наших новітніх моделей.</p>
+    </section>
+
+    <section class="media-section">
+        <h2>Аудіо путівники</h2>
+        <audio controls>
+            <source src="/images/Як ніколи.mp3" type="audio/mpeg">
+            <source src="media/car-audio.ogg" type="audio/ogg">
+            Ваш браузер не підтримує аудіо-тег.
+        </audio>
+        <p>Слухайте наш аудіо-гід, щоб дізнатися більше про характеристики автомобілів.</p>
+    </section>
+
+    <section class="media-section gallery">
+        <h2>Галерея автомобілів</h2>
+        <div class="gallery-images">
+            <img src="/images/2404-Mercedes-Benz-GLA.jpg" alt="Автомобіль 1">
+            <img src="/images/audi_rs_7_front_1.jpg" alt="Автомобіль 2" width="500">
+            <img src="/images/cosy.jpg" alt="Автомобіль 3">
+        </div>
+        <p>Подивіться зображення найпопулярніших моделей, що ми пропонуємо.</p>
+    </section>
+
+    <form>
+        <fieldset>
+            <legend>Вибір медіа-контенту</legend>
+            <label><input type="checkbox" name="media" value="video"> Відео</label>
+            <label><input type="checkbox" name="media" value="audio"> Аудіо</label>
+            <label><input type="checkbox" name="media" value="images"> Зображення</label>
+        </fieldset>
+        <button type="submit">Переглянути вибране</button>
+    </form>
+</main>
+
+<footer>
+    <p>&copy; 2024 Mauto - Компанія з продажу автомобілів. Всі права захищені.</p>
+</footer>
+
+</body>
+</html>

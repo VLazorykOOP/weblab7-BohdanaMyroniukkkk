@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Історія звернень</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        function displayHistory() {
+
+            const history = [
+                "Сторінка 1: Відкрито о 10:00",
+                "Сторінка 2: Відкрито о 10:15",
+                "Сторінка 3: Відкрито о 10:30"
+            ];
+
+            document.getElementById("historyTextArea").value = history.join("\n");
+
+            alert("Історія звернень успішно виведена!");
+
+            console.log("Історія звернень:", history);
+        }
+    </script>
+</head>
+<body>
+    <h1 style="text-align: center;">Історія звернень до сторінок</h1>
+    <div style="text-align: center;">
+        <textarea id="historyTextArea" rows="15" style="width: 95%; max-width: 800px;" placeholder="Тут буде історія звернень..."></textarea><br>
+        <button type="button" onclick="displayHistory()">Run Task</button>
+    </div>
+</body>
+</html>

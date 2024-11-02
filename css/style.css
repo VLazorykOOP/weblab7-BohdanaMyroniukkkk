@@ -1,0 +1,372 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px; 
+    transition: background-color 0.3s; 
+}
+
+nav a:hover {
+    background-color: #555; 
+    text-decoration: underline;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.news-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.news-item h2 {
+    color: black;
+}
+
+.news-item p {
+    margin: 10px 0;
+}
+
+.date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+nav a:visited {
+    color: #ccc;
+}
+
+.news-item:first-child {
+    border-top: 2px solid black; 
+}
+
+.news-item:last-of-type {
+    margin-bottom: 20px; 
+}
+
+.news-item::first-line {
+    font-weight: bold; 
+}
+
+.news-item::selection {
+    background-color: #ffcc00; 
+}
+
+nav a {
+    font-style: italic; 
+}
+
+dl {
+    margin: 20px 0;
+    padding: 0;
+}
+
+dt {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+dd {
+    margin-left: 20px;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+ul, ol {
+    margin: 20px 0;
+    padding-left: 40px;
+}
+
+ul ul, ol ol {
+    margin-top: 10px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: black;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav {
+    background-color: #333;
+    padding: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+    margin-top: 20px;
+}
+
+.news-page .news-item {
+    border-bottom: 1px solid #ddd;
+    padding: 20px 0;
+}
+
+.news-page .news-item h2 {
+    color: black;
+}
+
+.news-page .news-item p {
+    margin: 10px 0;
+}
+
+.news-page .date {
+    font-size: 0.9em;
+    color: #777;
+}
+
+.aboutme-page .container {
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.aboutme-page h1 {
+    text-align: center;
+    color: white;
+}
+
+.aboutme-page .centered-image {
+    display: block;
+    margin: 20px auto;
+    width: 30%;
+    border-radius: 10px;
+}
+
+.aboutMauto-page .car-card {
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.aboutMauto-page .car-card img {
+    width: 250px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.aboutMauto-page .car-details {
+    padding: 20px;
+}
+
+.aboutMauto-page .car-details h3 {
+    margin: 0;
+    color: black; 
+}
+
+.aboutMauto-page .car-details p {
+    margin: 5px 0;
+}
+
+.form-body {
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; 
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    color: #000000; 
+}
+h1 {
+    color: white;
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+}
+fieldset {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 2px solid #000000; 
+    border-radius: 5px; 
+    background-color: #f4f4f4; 
+}
+legend {
+    font-weight: bold;
+    color: black; 
+}
+label {
+    display: inline-block;
+    width: 150px;
+    color: #000000; 
+}
+input, textarea, select {
+    width: 200px;
+    margin-bottom: 10px;
+    border: 1px solid #000000; 
+    border-radius: 5px; 
+    padding: 5px; 
+    color: #000000; 
+}
+input:focus, textarea:focus {
+    border-color: black; 
+    outline: none; 
+}
+input[type="range"] {
+    -webkit-appearance: none; 
+    width: 20%; 
+    height: 4px;
+    background: slategrey; 
+    border-radius: 5px; 
+    outline: none; 
+}
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none; 
+    width: 12px; 
+    height: 12px; 
+    background: black; 
+    border-radius: 50%; 
+    cursor: pointer; 
+}
+input[type="submit"] {
+    width: 150px;
+    padding: 10px;
+    background-color: black; 
+    color: white;
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+    transition: background-color 0.3s; 
+}
+input[type="submit"]:hover {
+    background-color: slategrey; 
+}
+
+body {
+    background-color: white;
+    color: black; 
+    font-family: Arial, sans-serif; 
+    margin: 0; 
+    padding: 20px; 
+}
+
+table {
+    width: 50%; 
+    border-collapse: collapse;
+    margin: 20px auto; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    color: black; 
+}
+table, th, td {
+    border: 2px solid black; 
+}
+th, td {
+    padding: 2px; 
+    text-align: center;
+    background-color: transparent; 
+}
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px 0; 
+    color: black; 
+}
+tr {
+    height: 20px;
+}
+td.narrow {
+width: 30px; 
+}
+
+td.wide {
+width: 5px; 
+}
+caption{
+    color: white;
+    text-align: center;
+    background-color: #333;
+    padding: 10px;
+}
+#car_brand {
+    color: gray; 
+}
+#car_brand option {
+    color: black; 
+}
+#car_brand:focus {
+    color: black; 
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 8px;
+}
+
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрує елементи по горизонталі */
+    height: 100vh; /* Висота контейнера на всю висоту вікна */
+}
+textarea {
+    margin-bottom: 10px; /* Відстань між textarea і кнопкою */
+}

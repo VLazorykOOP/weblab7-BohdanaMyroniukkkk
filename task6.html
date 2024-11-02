@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Task</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        form {
+    max-width: 600px;
+    margin: 0 auto; 
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; 
+}
+
+.array-label, 
+input[type="text"],
+.radio-group,
+button {
+    margin: 0 auto; 
+}
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .array-label {
+            display: block;
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .radio-group {
+            display: flex;
+            flex-direction: row;
+            gap: 20px; 
+        }
+
+        .radio-group label {
+            display: flex;
+            align-items: center;
+        }
+
+        .radio-group input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        .array-task-header {
+    text-align: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 24px; 
+    margin-top: 0;   
+    padding-top: 20px;
+}
+
+    </style>
+    <script>
+        function createArray() {
+            const input = document.getElementById('arrayInput').value;
+            const array = input.split(',').map(item => item.trim());
+            const N = array.length / 2;
+
+            if (array.length % 2 !== 0 || array.length === 0) {
+                alert("Будь ласка, введіть масив парного розміру.");
+                return;
+            }
+
+            const B = array.slice(N).concat(array.slice(0, N));
+            const outputMethod = document.querySelector('input[name="outputMethod"]:checked').value;
+
+            if (outputMethod === 'textarea') {
+                document.getElementById('outputTextarea').value = B.join(', ');
+            } else if (outputMethod === 'alert') {
+                alert('Масив B: ' + B.join(', '));
+            } else if (outputMethod === 'console') {
+                console.log('Масив B:', B);
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <h1 class="array-task-header">Форма для роботи з масивами</h1>
+
+
+<form onsubmit="event.preventDefault(); createArray();">
+    <label for="arrayInput" class="array-label">Введіть елементи масиву, розділені комами:</label>
+    <input type="text" id="arrayInput" placeholder="Наприклад: 1, 2, 3, 4" required>
+
+    <fieldset>
+        <legend>Виведення:</legend>
+        <div class="radio-group">
+            <label><input type="radio" name="outputMethod" value="textarea" checked> У текстове поле</label>
+            <label><input type="radio" name="outputMethod" value="alert"> У сповіщення (alert)</label>
+            <label><input type="radio" name="outputMethod" value="console"> У консоль (console.log)</label>
+        </div>
+    </fieldset>
+
+    <button type="submit">Array Task</button>
+</form>
+
+<h2>Результат:</h2>
+<textarea id="outputTextarea" rows="4" cols="50" readonly placeholder="Результат з'явиться тут..."></textarea>
+
+</body>
+</html>

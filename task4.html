@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css" type="text/css" class="stylesheet-link">
+    <title>M.Auto - Продаж автомобілів</title>
+    <style>
+        img {
+            width: 300px; 
+            transition: width 0.3s; 
+            margin: 10px; 
+        }
+    </style>
+    <script>
+
+        function enlargeImage(event) {
+            event.target.style.width = "350px"; 
+            console.log("Зображення збільшено:", event.target.alt); 
+        }
+
+        function shrinkImage(event) {
+            event.target.style.width = "300px"; 
+            console.log("Зображення повернуто до початкового розміру:", event.target.alt); 
+        }
+
+        window.onload = function() {
+
+            const images = document.querySelectorAll("img");
+
+
+            images.forEach(image => {
+                image.addEventListener("mouseover", enlargeImage);
+                image.addEventListener("mouseout", shrinkImage);
+            });
+        };
+    </script>
+</head>
+
+<body>
+
+<header>
+    <h1>Ласкаво просимо до M.Auto</h1>
+    <marquee behavior="scroll" style="color: yellow;">Ваш надійний партнер у світі автомобілів</marquee>
+</header>
+
+<nav id="main-nav">
+    <ul>
+        <li><a href="aboutMauto.html" title="Інформація про компанію" target="_self" rel="noopener">Про компанію</a></li>
+        <li><a href="aboutme.html" title="Інформація про автора" target="_self" rel="noopener">Про автора</a></li>
+        <li><a href="news.html" title="Останні новини" target="_self" rel="noopener">Новини</a></li>
+        <li><a href="menu.html" title="Навігаційне меню" target="_self" rel="noopener">Меню</a></li>
+        <li><a href="form.html" title="Форма для покупців" target="_self" rel="noopener">Форма</a></li>
+        <li><a href="table.html" title="Таблиця" target="_self" rel="noopener">Таблиця</a></li>
+    </ul>
+</nav>
+
+<main>  
+    <div class="container">
+        <h2>Наші автомобілі</h2>
+
+        <ol title="Список автомобілів" start="1" style="list-style-type: lower-alpha;" type="a">
+            <li dir="ltr" title="BMW Sedan" value="1">
+                <div class="car-card">
+                    <img src="../images/cosy.jpg" alt="BMW Sedan" width="300">
+                    <div class="car-details">
+                        <h3>BMW - Седан</h3>
+                        <p><strong>Виробник:</strong> BMW Group</p>
+                        <p><strong>Постачальник:</strong> Автоцентр "Альфа"</p>
+                        <p><strong>Ціна:</strong> 30 000 €</p>
+                    </div>
+                </div>
+            </li>
+
+            <li dir="ltr" title="Mercedes-Benz SUV" value="2">
+                <div class="car-card">
+                    <img src="../images/2404-Mercedes-Benz-GLA.jpg" alt="Mercedes-Benz SUV" width="300">
+                    <div class="car-details">
+                        <h3>Mercedes-Benz - Позашляховик</h3>
+                        <p><strong>Виробник:</strong> Daimler AG</p>
+                        <p><strong>Постачальник:</strong> Техно-Мотор</p>
+                        <p><strong>Ціна:</strong> 50 000 €</p>
+                    </div>
+                </div>
+            </li>
+
+            <li dir="ltr" title="Ford Hatchback" value="3">
+                <div class="car-card">
+                    <img src="../images/wqimsyomjykjfluzqqld.jpg" alt="Ford Hatchback" width="300">
+                    <div class="car-details">
+                        <h3>Ford - Хетчбек</h3>
+                        <p><strong>Виробник:</strong> Ford Motor Company</p>
+                        <p><strong>Постачальник:</strong> Audi Sport GmbH</p>
+                        <p><strong>Ціна:</strong> 163 900 $</p>
+                    </div>
+                </div>
+            </li>
+
+            <li dir="ltr" title="Audi RS7 Sportback" value="4">
+                <div class="car-card">
+                    <img src="../images/audi_rs_7_front_1.jpg" alt="Audi RS7 Sportback" width="300"> 
+                    <div class="car-details">
+                        <h3>Audi RS7 Sportback</h3>
+                        <p><strong>Виробник:</strong> Audi Company</p>
+                        <p><strong>Постачальник:</strong> Автомаркет "Мотор"</p>
+                        <p><strong>Ціна:</strong> 20 000 €</p>
+                    </div>
+                </div>
+            </li>
+        </ol>
+
+        <ul dir="ltr" lang="uk" style="list-style-type: disc;" type="circle">
+            <li title="Додаткові послуги" value="1">Додаткові послуги:
+                <ul>
+                    <li title="Тест-драйв" dir="ltr" value="1">Тест-драйв</li>
+                    <li title="Фінансування" dir="ltr" value="2">Фінансування</li>
+                    <li title="Гарантія" dir="ltr" value="3">Гарантія</li>
+                </ul>
+            </li>
+        </ul>
+
+        <dl>
+            <dt>Автомобіль</dt>
+            <dd>Механічний засіб пересування, призначений для транспортування людей або вантажів.</dd>
+            
+            <dt>Тест-драйв</dt>
+            <dd>Можливість випробувати автомобіль перед покупкою для перевірки його характеристик.</dd>
+            
+            <dt>Гарантія</dt>
+            <dd>Юридична гарантія на продукцію або послугу, яка забезпечує безкоштовний ремонт або заміну.</dd>
+        </dl>
+
+        <menu type="toolbar" class="car-menu" label="Меню автомобілів">
+            <li><a href="#car1" target="_self" title="Деталі BMW" rel="nofollow">BMW</a></li>
+            <li><a href="#car2" target="_self" title="Деталі Mercedes-Benz" rel="nofollow">Mercedes-Benz</a></li>
+            <li><a href="#car3" target="_self" title="Деталі Ford" rel="nofollow">Ford</a></li>
+            <li><a href="#car4" target="_self" title="Деталі Audi" rel="nofollow">Audi</a></li>
+        </menu>
+
+        <dir class="additional-info" dir="ltr" id="info">
+            <h3>Додаткова інформація</h3>
+            <dt id="info-title" class="info-title">Ця інформація доступна за запитом.</dt>
+            <dd dir="ltr" id="info1">Зв'яжіться з нами для отримання детальної інформації.</dd>
+        </dir>
+
+        <nobr id="nobr-example">Телефон: +38 (050) 123-45-67</nobr>
+
+    </div>
+</main>  
+
+<footer>
+    <p>&copy; 2024 M.Auto. Усі права захищені.</p>
+</footer>
+
+</body>
+</html>

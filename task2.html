@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav {
+            background-color: #444;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1 onclick="alert('Ви натиснули на заголовок сайту!');">Меню сайту</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="aboutMauto.html">Про компанію</a></li>
+            <li><a href="aboutme.html">Про автора</a></li>
+            <li><a href="news.html">Новини</a></li>
+            <li><a href="form.html">Форма</a></li>
+            <li><a href="table.html" title="Таблиця" target="_self" rel="noopener">Таблиця</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2 ondblclick="changeColor(this)">Ласкаво просимо!</h2>
+        <p onmouseover="showMessage('Ви навели курсор на текст.')" 
+           onmouseout="resetMessage()">Оберіть один із пунктів меню для отримання додаткової інформації.</p>
+        <div id="message"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 M.Auto. Усі права захищені.</p>
+    </footer>
+
+    <script>
+        function changeColor(element) {
+            element.style.color = "green";
+            alert("Ви виконали подвійну дію на заголовок!");
+        }
+
+        function showMessage(msg) {
+            const messageDiv = document.getElementById("message");
+            messageDiv.textContent = msg;
+            messageDiv.style.color = "blue";
+        }
+
+        function resetMessage() {
+            const messageDiv = document.getElementById("message");
+            messageDiv.textContent = "";
+        }
+    </script>
+</body>
+</html>
